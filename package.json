@@ -1,7 +1,7 @@
 {
   "name": "create-vite-vercel",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@7.25.0",
   "description": "",
   "author": "gumingWu",
@@ -32,6 +32,10 @@
       ]
     }
   },
+  "bin": {
+    "create-vite-vercel": "index.js",
+    "cvv": "index.js"
+  },
   "files": [
     "dist"
   ],
@@ -43,12 +47,22 @@
     "release": "bumpp && npm publish",
     "start": "esno src/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "postinstall": "node ./scripts/postinstall.js",
+    "uninstall": "node ./scripts/uninstall.js"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.5.0",
+    "cac": "^6.7.14",
+    "create-vite": "^4.1.0",
+    "fs-extra": "^11.1.0",
+    "simple-git": "^3.16.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.2",
     "@antfu/ni": "^0.20.0",
     "@antfu/utils": "^0.7.2",
+    "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.13.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.34.0",
