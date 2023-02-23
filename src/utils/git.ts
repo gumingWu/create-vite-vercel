@@ -12,7 +12,7 @@ export async function getUserAuth() {
     return
   }
 
-  note(authToken.value)
+  return authToken.value
 }
 
 export async function saveUserAuth(authToken: string) {
