@@ -1,8 +1,8 @@
 import { intro, note, text } from '@clack/prompts'
 import { cac } from 'cac'
 import { version } from '../../package.json'
-import { createRepository, getRepository } from '../server/git'
-import { saveUserAuth } from '../utils/git'
+// import { createRepository, getRepository } from '../server/git'
+import { saveUserAuth, vite } from '../utils'
 
 const cli = cac('create-vite-vercel')
 
@@ -14,10 +14,12 @@ export function run() {
     .action(async () => {
       note('create project')
 
-      const name = await text({
-        message: 'Text the project name',
-      })
-      createRepository(name as string)
+      // const name = await text({
+      //   message: 'Text the project name',
+      // })
+
+      vite()
+      // createRepository(name as string)
       // getRepository()
     })
   cli.command('auth', 'save github auth token')

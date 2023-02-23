@@ -1,0 +1,20 @@
+diff --git a/dist/index.mjs b/dist/index.mjs
+index da3c97efe7ac0af330f2fd8f286bf7f28d6d1e0b..862e2df43d8a7466071d1c452d7b84a44e1ce277 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -49,3 +49,4 @@ Filtered results for: ${this.inputValue?this.inputValue:k.gray("Enter something
+ Scaffolding project in ${a}...`);const S=P.resolve(Le(import.meta.url),"../..",`template-${w}`),C=(u,y)=>{const m=P.join(a,Wr[u]??u);y?O.writeFileSync(m,y):ke(P.join(S,u),m)},z=O.readdirSync(S);for(const u of z.filter(y=>y!=="package.json"))C(u);const T=JSON.parse(O.readFileSync(P.join(S,"package.json"),"utf-8"));T.name=l||i(),C("package.json",JSON.stringify(T,null,2)),f&&Zr(a,w.endsWith("-ts"));const d=P.relative(jt,a);switch(console.log(`
+ Done. Now run:
+ `),a!==jt&&console.log(`  cd ${d.includes(" ")?`"${d}"`:d}`),g){case"yarn":console.log("  yarn"),console.log("  yarn dev");break;default:console.log(`  ${g} install`),console.log(`  ${g} run dev`);break}console.log()}function Ae(s){return s?.trim().replace(/\/+$/g,"")}function ke(s,t){O.statSync(s).isDirectory()?zr(s,t):O.copyFileSync(s,t)}function je(s){return/^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(s)}function Jr(s){return s.trim().toLowerCase().replace(/\s+/g,"-").replace(/^[._]/,"").replace(/[^a-z\d\-~]+/g,"-")}function zr(s,t){O.mkdirSync(t,{recursive:!0});for(const e of O.readdirSync(s)){const i=P.resolve(s,e),o=P.resolve(t,e);ke(i,o)}}function Ur(s){const t=O.readdirSync(s);return t.length===0||t.length===1&&t[0]===".git"}function Kr(s){if(O.existsSync(s))for(const t of O.readdirSync(s))t!==".git"&&O.rmSync(P.resolve(s,t),{recursive:!0,force:!0})}function qr(s){if(!s)return;const e=s.split(" ")[0].split("/");return{name:e[0],version:e[1]}}function Zr(s,t){Ne(P.resolve(s,"package.json"),e=>e.replace(/"@vitejs\/plugin-react": ".+?"/,'"@vitejs/plugin-react-swc": "^3.0.0"')),Ne(P.resolve(s,`vite.config.${t?"ts":"js"}`),e=>e.replace("@vitejs/plugin-react","@vitejs/plugin-react-swc"))}function Ne(s,t){const e=O.readFileSync(s,"utf-8");O.writeFileSync(s,t(e),"utf-8")}Gr().catch(s=>{console.error(s)});
++export const createVite = Gr
+\ No newline at end of file
+diff --git a/index.js b/index.js
+index f5e8e064a68d9fe50149b6b19cfec12713ecec5e..5a97be9738fdda486813207df7d74190eb6ac612 100644
+--- a/index.js
++++ b/index.js
+@@ -1,3 +1,5 @@
+ #!/usr/bin/env node
+ 
+ import './dist/index.mjs'
++
++export { createVite } from './dist/index.mjs'

@@ -75,5 +75,10 @@
     "unbuild": "^1.1.1",
     "vite": "^4.1.1",
     "vitest": "^0.28.5"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "create-vite@4.1.0": "patches/create-vite@4.1.0.patch"
+    }
   }
 }
