@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 patchedDependencies:
   create-vite@4.1.0:
-    hash: vn4jjbfzlhg334imp7aqif73a4
+    hash: t2svps2k32q4jlzxs5nq274i7q
     path: patches/create-vite@4.1.0.patch
 
 importers:
@@ -34,7 +34,7 @@ importers:
       '@clack/prompts': 0.5.0
       '@octokit/core': 4.2.0
       cac: 6.7.14
-      create-vite: 4.1.0_vn4jjbfzlhg334imp7aqif73a4
+      create-vite: 4.1.0_t2svps2k32q4jlzxs5nq274i7q
       fs-extra: 11.1.0
       simple-git: 3.16.1
     devDependencies:
@@ -1435,7 +1435,7 @@ packages:
       safe-buffer: 5.1.2
     dev: true
 
-  /create-vite/4.1.0_vn4jjbfzlhg334imp7aqif73a4:
+  /create-vite/4.1.0_t2svps2k32q4jlzxs5nq274i7q:
     resolution: {integrity: sha512-IQAkwLJcp/6fQUnB2CBxTnsT5xfaHDUTCUi/LLWZTrzfrhVvtoKv9eHuXoG+XzyOyNgqUPJi9aNzwTXqSHw8Vg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true

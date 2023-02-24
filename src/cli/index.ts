@@ -14,11 +14,11 @@ export function run() {
     .action(async () => {
       note('create project')
 
-      // const name = await text({
-      //   message: 'Text the project name',
-      // })
+      const name = await text({
+        message: 'Text the project name',
+      })
+      vite(name as string)
 
-      vite()
       // createRepository(name as string)
       // getRepository()
     })
