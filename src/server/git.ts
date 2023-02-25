@@ -22,15 +22,3 @@ export function createRepository(name: string) {
     resolve(htmlUrl)
   })
 }
-
-export async function getRepository() {
-  spinnerInstance.start('Getting repository')
-
-  const octokit = await useOctokit()
-  const res = await octokit.request('GET /repos/{owner}/{repo}', {
-    owner: 'gumingWu',
-    repo: 'wiew-ui',
-  })
-
-  spinnerInstance.stop('Get repository successfully')
-}

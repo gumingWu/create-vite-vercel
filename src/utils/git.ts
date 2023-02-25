@@ -31,21 +31,20 @@ export async function pushProject(projectDirName: string, url: string) {
   const projectDir = resolve(currentDir, projectDirName)
 
   spin.start('Git push start')
-  execSync('git init', {
-    cwd: projectDir,
+
+  await git.cwd({
+    path: projectDir,
+    root: true,
   })
-  execSyncCwd('git init', projectDir)
-  execSyncCwd('git add -A', projectDir)
-  execSyncCwd('git commit -m "first commit"', projectDir)
-  execSyncCwd('git branch -M main', projectDir)
-  execSyncCwd(`git remote add origin ${url}`, projectDir)
-  execSyncCwd('git push -u origin main', projectDir)
+    .init()
+    .add('./*')
+    .commit('first commit')
+    .branch(['main'])
+    .addRemote('origin', url)
+    .push(['-u', 'origin', 'main'])
+    .catch((err) => {
+      note(`Git push fail: ${err.message}`)
+    })
 
   spin.stop('Git push finish')
-}
-
-function execSyncCwd(command: string, projectDir: string) {
-  return execSync(command, {
-    cwd: projectDir,
-  })
 }
