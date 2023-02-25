@@ -1,1 +1,2 @@
-export const CVV_AUTH_TOKEN_KEY = 'createViteVercel.authToken'
+export const CVV_GITHUB_TOKEN_KEY = 'createViteVercel.githubToken'
+export const CVV_VERCEL_TOKEN_KEY = 'createViteVercel.vercelToken'
