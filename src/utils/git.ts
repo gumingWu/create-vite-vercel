@@ -21,7 +21,7 @@ export async function getGithubToken() {
 export async function saveGithubToken(authToken: string) {
   return new Promise<void>(async (resolve) => {
     await git.addConfig(CVV_GITHUB_TOKEN_KEY, authToken, false, 'global')
-    note(`save github token successfully: ${authToken}`)
+    note(`save github token successfully: ${authToken}`, 'success')
     resolve()
   })
 }
@@ -43,7 +43,7 @@ export async function pushProject(projectDirName: string, url: string) {
     .addRemote('origin', url)
     .push(['-u', 'origin', 'main'])
     .catch((err) => {
-      note(`Git push fail: ${err.message}`)
+      note(`Git push fail: ${err.message}`, 'error')
     })
 
   spin.stop('Git push finish')

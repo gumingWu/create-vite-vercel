@@ -7,7 +7,7 @@ const git = simpleGit()
 export function saveVercelToken(token: string) {
   return new Promise<void>(async (resolve) => {
     await git.addConfig(CVV_VERCEL_TOKEN_KEY, token, false, 'global')
-    note(`save vercel token successfully: ${token}`)
+    note(`save vercel token successfully: ${token}`, 'success')
     resolve()
   })
 }

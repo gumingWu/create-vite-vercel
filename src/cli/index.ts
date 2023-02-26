@@ -1,4 +1,4 @@
-import { intro, outro } from '@clack/prompts'
+import { intro, note, outro } from '@clack/prompts'
 import { cac } from 'cac'
 import { lightCyan, lightGreen } from 'kolorist'
 import { version } from '../../package.json'
@@ -10,10 +10,14 @@ export function run() {
   cli.command('[default]', 'create-vite-vercel usage')
     .action(() => {
       intro(lightCyan('create-vite-vercel'))
+
+      note('please follow the cli document to use\n中文文档:\n英文文档:', 'tips')
+
       outro(lightGreen('finish'))
     })
   cli.command('project', 'create vite project')
-    .option('--no-vercel', 'just create vite project without pushing vercel')
+    .option('--no-github', 'just create vite project without pushing github')
+    .option('--no-vercel', 'just create vite project and push github without pushing vercel')
     .action(() => {
       intro(lightCyan('create-vite-vercel'))
     })
