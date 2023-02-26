@@ -6,21 +6,22 @@ import { CVV_GITHUB_TOKEN_KEY } from './constant'
 const git = simpleGit()
 const spin = spinner()
 
-export async function getUserAuth() {
-  const authToken = await git.getConfig(CVV_GITHUB_TOKEN_KEY, 'global')
+export async function getGithubToken() {
+  return new Promise(async (resolve, reject) => {
+    const token = await git.getConfig(CVV_GITHUB_TOKEN_KEY, 'global')
+    if (!token.value) {
+      note('No github token, please run  "create-vite-vercel token" to save', 'warning')
+      reject(new Error('no github token'))
+    }
 
-  if (!authToken.value) {
-    note('No github auth token, please run  "create-vite-vercel auth" to save', 'warning')
-    return
-  }
-
-  return authToken.value
+    resolve(token.value)
+  })
 }
 
 export async function saveGithubToken(authToken: string) {
   return new Promise<void>(async (resolve) => {
     await git.addConfig(CVV_GITHUB_TOKEN_KEY, authToken, false, 'global')
-    note(`save github successfully: ${authToken}`)
+    note(`save github token successfully: ${authToken}`)
     resolve()
   })
 }

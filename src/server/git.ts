@@ -4,9 +4,9 @@ import { useOctokit } from './index'
 
 const spinnerInstance = spinner()
 
-export function createRepository(name: string) {
+export function createGithubRepository(name: string) {
   return new Promise<string>(async (resolve) => {
-    spinnerInstance.start('Starting create repository')
+    spinnerInstance.start('Starting create github repository')
 
     const octokit = await useOctokit()
 
@@ -17,7 +17,7 @@ export function createRepository(name: string) {
     })
     const htmlUrl = (res as OctokitResponse<any>).data.html_url
 
-    spinnerInstance.stop(`Create repository successfully, url: ${htmlUrl}`)
+    spinnerInstance.stop(`Create github repository successfully, url: ${htmlUrl}`)
 
     resolve(htmlUrl)
   })
