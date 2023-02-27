@@ -1,9 +1,8 @@
 # create-vite-vercel
 
-[![NPM version](https://img.shields.io/npm/v/create-vite-vercel?color=a1b858&label=)](https://www.npmjs.com/package/create-vite-vercel)
-
 A cli to create vite app and deploy to vercel
 
+[![NPM version](https://img.shields.io/npm/v/create-vite-vercel?color=a1b858&label=)](https://www.npmjs.com/package/create-vite-vercel)
 
 ## Main Git
 
