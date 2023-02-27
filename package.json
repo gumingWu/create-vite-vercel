@@ -52,7 +52,6 @@
     "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "postinstall": "node ./scripts/postinstall.js",
     "uninstall": "node ./scripts/uninstall.js"
   },
   "dependencies": {
