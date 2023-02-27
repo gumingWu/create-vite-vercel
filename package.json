@@ -12,7 +12,11 @@
     "url": "git+https://github.com/gumingWu/create-vite-vercel.git"
   },
   "bugs": "https://github.com/gumingWu/create-vite-vercel/issues",
-  "keywords": [],
+  "keywords": [
+    "create-vite",
+    "vercel",
+    "vite-deploy"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
