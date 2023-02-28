@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.2",
   "packageManager": "pnpm@7.25.0",
-  "description": "",
+  "description": "A cli to create vite app, push to github and deploy to vercel",
   "author": "gumingWu",
   "license": "MIT",
   "homepage": "https://github.com/gumingWu/create-vite-vercel#readme",
@@ -51,8 +51,7 @@
     "release": "bumpp && npm publish",
     "start": "esno src/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "uninstall": "node ./scripts/uninstall.js"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@clack/prompts": "^0.5.0",
