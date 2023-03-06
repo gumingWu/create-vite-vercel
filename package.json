@@ -1,7 +1,7 @@
 {
   "name": "create-vite-vercel",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "packageManager": "pnpm@7.25.0",
   "description": "A cli to create vite app, push to github and deploy to vercel",
   "author": "gumingWu",
