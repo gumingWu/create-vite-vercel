@@ -41,7 +41,8 @@
     "cvv": "index.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "patches"
   ],
   "scripts": {
     "build": "unbuild",
